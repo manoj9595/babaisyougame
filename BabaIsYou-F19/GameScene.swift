@@ -11,8 +11,11 @@ import GameplayKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
-     let PLAYER_SPEED:CGFloat = 20
+    let PLAYER_SPEED:CGFloat = 20
     var player:SKSpriteNode!
+    
+//    var flag64:SKSpriteNode!
+
 
     override func didMove(to view: SKView) {
         self.physicsWorld.contactDelegate = self
@@ -20,14 +23,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
              // initialze the player
              self.player = self.childNode(withName: "player") as! SKSpriteNode
+//             self.flag64 = self.childNode(withName: "flag64") as! SKSpriteNode
+//             self.wallblock = self.childNode(withName: "wallblock") as! SKSpriteNode
+    
     }
    
     func didBegin(_ contact: SKPhysicsContact) {
-        print("Something collided!")
+        
+               
     }
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
+        
+//        if (self.player.frame.intersects(self.flag64.frame) == true) {
+//        print("\(currentTime): CONGRATULATIONS!")
+//    }
     }
     
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
